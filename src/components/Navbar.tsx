@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/hitrost-logo.jpg";
+import logo from "@/assets/hitrost-logo.png";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -32,7 +32,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2 cursor-pointer" onClick={() => scrollToSection("hero")}>
-            <img src={logo} alt="Hitrost Logo" className="h-10 w-auto" />
+            <img src={logo} alt="Hitrost Logo" className="h-16 w-auto" />
           </div>
 
           {/* Desktop Navigation */}
