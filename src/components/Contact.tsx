@@ -33,13 +33,16 @@ const Contact = () => {
       const validatedData = contactSchema.parse(formData);
       setIsSubmitting(true);
 
+      // Save to Supabase
       const { error } = await supabase
         .from('contact_submissions')
-        .insert({
-          name: validatedData.name,
-          email: validatedData.email,
-          message: validatedData.message,
-        });
+        .insert([
+          {
+            name: validatedData.name,
+            email: validatedData.email,
+            message: validatedData.message,
+          }
+        ]);
 
       if (error) {
         throw error;
